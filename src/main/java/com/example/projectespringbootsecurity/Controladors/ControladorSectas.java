@@ -16,7 +16,7 @@ public class ControladorSectas {
 
     @GetMapping("/sectes/list")
     public String llistar(Model m){
-        m.addAttribute("llistaSectes",servei.llistat());
+        m.addAttribute("llistaSectes",servei.llista());
         return "llistat";
     }
 
@@ -35,11 +35,11 @@ public class ControladorSectas {
 
 
 
-    @PostMapping( "/sectes/edit/submit")
-    public String subs (@ModelAttribute("sectaForm") Secta sec){
-        servei.substituirSecta(sec);
-        return "redirect:/sectes/list";
-    }
+//    @PostMapping( "/sectes/edit/submit")
+//    public String subs (@ModelAttribute("sectaForm") Secta sec){
+//        servei.substituirSecta(sec);
+//        return "redirect:/sectes/list";
+//    }
 
 
     @GetMapping("/sectes/eliminar")
@@ -48,11 +48,11 @@ public class ControladorSectas {
         return "redirect:/sectes/list";
     }
 
-    @GetMapping("/ordenar/nom")
-    public String ordenarNom(){
-        servei.ordenarPerNom();
-        return "redirect:/sectes/list";
-    }
+//    @GetMapping("/ordenar/nom")
+//    public String ordenarNom(){
+//        servei.ordenarPerNom();
+//        return "redirect:/sectes/list";
+//    }
 
 
 
@@ -64,13 +64,13 @@ public class ControladorSectas {
         return "/afegir";
     }
 
-    @PostMapping("/updateSecta")
-    //empleatForm és el nom de l'objecte que es recull al formulari, el CommandObject (bean)
-    //https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html#handling-the-command-object
-    public String updateAnimalpost(@ModelAttribute("Secta") Secta sec){
-        servei.substituirSecta(sec);
-        return "redirect:/";
-
-    }
+//    @PostMapping("/updateSecta")
+//    //empleatForm és el nom de l'objecte que es recull al formulari, el CommandObject (bean)
+//    //https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html#handling-the-command-object
+//    public String updateAnimalpost(@ModelAttribute("Secta") Secta sec){
+//        servei.substituirSecta(sec);
+//        return "redirect:/";
+//
+//    }
 
 }
