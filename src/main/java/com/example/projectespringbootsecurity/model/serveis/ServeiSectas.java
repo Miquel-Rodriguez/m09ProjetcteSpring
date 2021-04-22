@@ -21,8 +21,8 @@ public class ServeiSectas {
         repositori.save(new Secta(3,"AudSpe", "Carlos Roze", "Barcelona", 57));
     }
 
-    public void eliminarPerid(int id){
-        repositori.deleteById(String.valueOf(id));
+    public void eliminarPerid(String nom){
+        repositori.deleteById(nom);
     }
 
     public Iterable<Secta> llista(){

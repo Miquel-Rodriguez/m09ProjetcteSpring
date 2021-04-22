@@ -43,7 +43,7 @@ public class ControladorSectas {
 
 
     @GetMapping("/sectes/eliminar")
-    public String Exercici1m(@RequestParam("id") int n){
+    public String Exercici1m(@RequestParam("nom") String n){
         servei.eliminarPerid(n);
         return "redirect:/sectes/list";
     }
