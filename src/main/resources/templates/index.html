@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/sectes/new">Afegir sectes</a><br/>
+<a href="/sectes/list">Llistar sectes </a><br/>
+<a href="/user/new">register</a><br/>
+<form   th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+
+</body>
+</html>

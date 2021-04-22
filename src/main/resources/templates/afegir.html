@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir Empleat</title>
+</head>
+<body>
+<!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
+<form method="post" action="#" th:action="${sectaForm.id!=0} ?@{/updateSecta}:@{/sectes/new/submit}" th:object="${sectaForm}">
+    <!-- si el id == 0 és la primera vegada que utilitzo el form, per tant new Empleat -->
+    <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
+
+    <h1 th:text="${sectaForm.id!=0}?'Editar empleat': 'Nou empleat'">bla bla empleat</h1>
+    Id <input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${sectaForm.id!=0}?'readonly':null"><br/>
+    Nom <input type="text" id="nom" placeholder="Nom" th:field="*{nom}"><br/>
+    Rector <input type="text" id="rector" placeholder="Rector" th:field="*{rector}"><br/>
+    Localitzacio <input type="text" id="localització" placeholder="Localització" th:field="*{localitzacio}"><br/>
+    Integrants <input type="text" id="integrants" placeholder="Integrants" th:field="*{numIntegrants}"><br/>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<form   th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+
+</body>
+</html>

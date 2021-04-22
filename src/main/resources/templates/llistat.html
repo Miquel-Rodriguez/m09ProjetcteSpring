@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Llistat</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Rector</th>
+        <th>Localització</th>
+        <th>membres</th>
+
+        <th>Editar</th>
+        <th>Eliminar</th>
+
+    </tr></br>
+    </thead>
+    <tbody>
+    <tr th:each="sec : ${llistaSectes}">
+        <td th:text="${sec.id}">ID</td>
+        <td th:text="${sec.nom}">ninguno</td>
+        <td th:text="${sec.rector}">nadie</td>
+        <td th:text="${sec.localitzacio}">B</td>
+        <td th:text="${sec.numIntegrants}">0</td>
+        <td><a th:href="@{/update/{secta}(secta = ${sec})}">Editar</a> </td>
+        <td><a th:href="@{/sectes/eliminar(id=${sec.id})}">Eliminar</a> </td><br/>
+
+    </tr>
+    </tbody>
+</table>
+
+<a href="/ordenar/nom">ordenar per nom</a><br/>
+
+
+<form   th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</body>
+</html>
