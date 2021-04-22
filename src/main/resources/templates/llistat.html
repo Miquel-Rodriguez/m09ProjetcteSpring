@@ -27,7 +27,7 @@
         <td th:text="${sec.localitzacio}">B</td>
         <td th:text="${sec.numIntegrants}">0</td>
         <td><a th:href="@{/update/{secta}(secta = ${sec})}">Editar</a> </td>
-        <td><a th:href="@{/sectes/eliminar(id=${sec.id})}">Eliminar</a> </td><br/>
+        <td><a th:href="@{/sectes/eliminar(nom=${sec.nom})}">Eliminar</a> </td><br/>
 
     </tr>
     </tbody>
