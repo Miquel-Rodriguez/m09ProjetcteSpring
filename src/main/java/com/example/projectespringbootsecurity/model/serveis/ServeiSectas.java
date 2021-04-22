@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 public class ServeiSectas {
@@ -37,10 +39,14 @@ public class ServeiSectas {
 //        }
 //    }
 
-//    public List<Secta> ordenarPerNom(){
-//        repositori.sort(Comparator.comparing(Secta::getNom));
-//        return repositori;
-//    }
+    public void ordenarPerNom(){
+
+        List<Secta> sectes = (List<Secta>) repositori.findAll();
+        sectes.sort(Comparator.comparing(Secta::getNom));
+        repositori.deleteAll();
+        repositori.saveAll(sectes);
+
+    }
 //
 //    public List<Secta> ordenarPerId(){
 //        repositori.sort(Comparator.comparing(Secta::getId));

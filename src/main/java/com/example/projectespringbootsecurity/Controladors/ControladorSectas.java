@@ -48,11 +48,11 @@ public class ControladorSectas {
         return "redirect:/sectes/list";
     }
 
-//    @GetMapping("/ordenar/nom")
-//    public String ordenarNom(){
-//        servei.ordenarPerNom();
-//        return "redirect:/sectes/list";
-//    }
+    @GetMapping("/ordenar/nom")
+    public String ordenarNom(){
+        servei.ordenarPerNom();
+        return "redirect:/sectes/list";
+    }
 
 
 
