@@ -12,8 +12,8 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Entity
 public class Secta {
-    @Id
     int id;
+    @Id
     String nom;
     String rector;
     String localitzacio;
